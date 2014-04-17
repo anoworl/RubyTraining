@@ -51,7 +51,7 @@ EOS
     begin
       fail
     rescue
-      error
+      raise
     end
   end
 
