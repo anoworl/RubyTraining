@@ -1,4 +1,4 @@
-require './app/middleware/neco'
+require 'neco'
 
 describe 'Integration Test' do
   let(:snake_expected){ { 'is_done' => true, 'order' => 1, 'task_title' => 'hoge' } }

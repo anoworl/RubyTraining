@@ -32,3 +32,4 @@ group :development, :test do
   gem 'rubocop', require: false
 end
 
+gem 'neco', github: 'anoworl/neco'

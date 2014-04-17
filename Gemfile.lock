@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/anoworl/neco.git
+  revision: 155bed2fac3051202d440bdca7c325a4583f7c7d
+  specs:
+    neco (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -100,6 +106,7 @@ PLATFORMS
 DEPENDENCIES
   coveralls
   haml
+  neco!
   rack-test
   rake
   redcarpet
