@@ -22,7 +22,7 @@ class Mosscow < Sinatra::Base
   end
 
   def error
-    halt 500
+    halt 500, { message: 'unexpected error' }.to_json
   end
 
   before do

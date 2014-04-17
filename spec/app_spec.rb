@@ -123,6 +123,7 @@ describe 'app.rb' do
       it 'returns 500' do
         delete "/api/todos/#{id}"
         expect(last_response.status).to eq 500
+        expect(MultiJson.load(last_response.body)).to eq MultiJson.load('{"message": "unexpected error"}')
       end
     end
   end
@@ -151,6 +152,12 @@ describe 'app.rb' do
   end
 
   context 'GET /error' do
+    it 'returns 500' do
+      get '/error'
+      expect(last_response.status).to eq 500
+      expect(MultiJson.load(last_response.body)).to eq MultiJson.load('{"message": "unexpected error"}')
+    end
+
     it 'returns 500' do
       pending('delete this line after you create Rack error catching module')
 
