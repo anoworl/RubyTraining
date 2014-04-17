@@ -31,7 +31,7 @@ class Mosscow < Sinatra::Base
   end
 
   get '/404' do
-    redirect '404.txt'
+    halt 404
   end
 
   get '/500' do
