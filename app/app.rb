@@ -21,6 +21,10 @@ class Mosscow < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  def error
+    halt 500
+  end
+
   before do
     ActiveRecord::Base.establish_connection(ENV['RACK_ENV'].to_sym)
     content_type 'text/html'
@@ -47,8 +51,7 @@ EOS
     begin
       fail
     rescue
-      response.status = 500
-      return nil
+      error
     end
   end
 
@@ -69,8 +72,7 @@ EOS
     begin
       todo.destroy
     rescue
-      response.status = 500
-      return nil
+      error
     end
     response.status = 204
     nil
