@@ -21,8 +21,10 @@ class Mosscow < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  def error
-    halt 500, { message: 'unexpected error' }.to_json
+  helpers do
+    def error
+      halt 500, { message: 'unexpected error' }.to_json
+    end
   end
 
   before do
