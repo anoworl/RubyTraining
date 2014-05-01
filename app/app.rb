@@ -25,6 +25,10 @@ class Mosscow < Sinatra::Base
     def error
       halt 500, { message: 'unexpected error' }.to_json
     end
+
+    def json_halt(code, json)
+      halt 500, json.to_json
+    end
   end
 
   before do
